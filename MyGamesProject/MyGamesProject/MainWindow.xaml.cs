@@ -37,7 +37,9 @@ namespace MyGamesProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1();
+            
+
+            Window1 window1 = new Window1(username);
             window1.Show();
             this.Close();
         }
@@ -48,6 +50,13 @@ namespace MyGamesProject
         {
             Window2 window2 = new Window2();
             window2.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Board_Score_Flappy board_Score_ = new Board_Score_Flappy();
+            board_Score_.Show();
             this.Close();
         }
     }

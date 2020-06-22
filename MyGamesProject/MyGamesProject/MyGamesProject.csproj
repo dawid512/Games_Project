@@ -65,6 +65,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Board_Score_Flappy.xaml.cs">
+      <DependentUpon>Board_Score_Flappy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Context.cs" />
     <Compile Include="Space_Invaders\Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
@@ -72,7 +75,11 @@
     <Compile Include="Start.xaml.cs">
       <DependentUpon>Start.xaml</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
+    <Compile Include="Users.cs" />
+    <Page Include="Board_Score_Flappy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Flappy_Bird\Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,16 +155,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Flappy_Bird\images\PRudyk_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Space_Invaders\images\PROF_ATH\Adamek.png" />
-    <Resource Include="Space_Invaders\images\PROF_ATH\Nikodem.png" />
-    <Resource Include="Space_Invaders\images\PROF_ATH\prof.png" />
-    <Resource Include="Space_Invaders\images\PROF_ATH\Sadowska.png" />
-    <Resource Include="Space_Invaders\images\PROF_ATH\Stadnicki.png" />
-    <Resource Include="Space_Invaders\images\PROF_ATH\Ukraina.png" />
-    <Resource Include="Space_Invaders\images\PROF_ATH\Warwas.png" />
-    <Resource Include="Space_Invaders\images\PROF_ATH\Zawiślak.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

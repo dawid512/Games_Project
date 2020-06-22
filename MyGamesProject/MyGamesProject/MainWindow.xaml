@@ -11,6 +11,7 @@
         <Button Content="Space Invaders" HorizontalAlignment="Left" Margin="444,208,0,0" VerticalAlignment="Top" Width="201" Click="Button_Click_1" Height="88"/>
         <Label Content="Witaj" HorizontalAlignment="Left" Margin="316,86,0,0" VerticalAlignment="Top" Height="29" Width="141"/>
         <TextBlock x:Name="TextBlock1" Text="{Binding .}" HorizontalAlignment="Left" Margin="316,120,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="49" Width="141"/>
+        <Button Content="Wyniki" HorizontalAlignment="Left" Margin="121,337,0,0" VerticalAlignment="Top" Width="192" Height="30" Click="Button_Click_2"/>
 
     </Grid>
 </Window>

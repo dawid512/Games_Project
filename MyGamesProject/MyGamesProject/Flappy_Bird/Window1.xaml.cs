@@ -29,17 +29,23 @@ namespace MyGamesProject.Flappy_Bird
 
         Rect FlappyRect;
 
+        public string username { get; set; }
+
         bool gameover = false;
-        public Window1()
+        public Window1(string user)
         {
             InitializeComponent();
 
+            this.username = user;
+            DataContext = username;
             //domyślne ustawienia timera
             gameTimer.Tick += gameEngine;
 
             gameTimer.Interval = TimeSpan.FromMilliseconds(20);
             startGame();
         }
+
+        
 
         private void Canvas_KeyisDown(object sender, KeyEventArgs e)
         {
@@ -54,6 +60,7 @@ namespace MyGamesProject.Flappy_Bird
             {
                 //jeśli jest koniec gry, klawisz r restartuje 
                 startGame();
+
             }
 
         }
@@ -126,11 +133,25 @@ namespace MyGamesProject.Flappy_Bird
                 gameTimer.Stop();
                 gameover = true;
                 MessageBox.Show("Twój wynik to " + score + Environment.NewLine+ " Wciśnij R aby zagrać ponownie");
-               // scoreText.Content += "  Wciśnij R aby zagrać ponownie";
-                
-            }
 
-           
+                using (var ctx = new Context())
+                {
+                    var userInfo = new Users();
+                    userInfo.Username = username;
+                    userInfo.Score = score;
+
+                    ctx.Uzytkownik.Add(userInfo);
+                    ctx.SaveChanges();
+                }
+
+
+
+                // scoreText.Content += "  Wciśnij R aby zagrać ponownie";
+
+            }
+            
+
+
             foreach (var x in MyCanvas.Children.OfType<Image>())
             {
                 if ((string)x.Tag == "obs1" || (string)x.Tag == "obs2" || (string)x.Tag == "obs3")
@@ -151,8 +172,18 @@ namespace MyGamesProject.Flappy_Bird
                         gameTimer.Stop();
                         gameover = true;
                         MessageBox.Show("Twój wynik to " + score+ Environment.NewLine+ " Wciśnij R aby zagrać ponownie");
-                       // scoreText.Content += "   Wciśnij R aby zagrać ponownie";
-                      
+                        // scoreText.Content += "   Wciśnij R aby zagrać ponownie";
+
+                        using (var ctx = new Context())
+                        {
+                            var userInfo = new Users();
+                            userInfo.Username = username;
+                            userInfo.Score = score;
+
+                            ctx.Uzytkownik.Add(userInfo);
+                            ctx.SaveChanges();
+                        }
+
                     }
 
                 }
@@ -205,6 +236,9 @@ namespace MyGamesProject.Flappy_Bird
 
                 
             }
+
+            
         }
+
     }
 }

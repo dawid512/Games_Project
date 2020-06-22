@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,18 @@ namespace MyGamesProject
         public Start()
         {
             InitializeComponent();
+
+            using (var database = new Context())
+            {
+                if (!database.Database.Exists())
+                {
+                    Database.SetInitializer(new CreateDatabaseIfNotExists<Context>());
+                    var context1 = new Context();
+                    context1.Database.Create();
+                }
+            }
+
+
         }
 
         
@@ -32,6 +45,7 @@ namespace MyGamesProject
 
 
             MainWindow mainWindow = new MainWindow(username);
+            Flappy_Bird.Window1 window1 = new Flappy_Bird.Window1(username);
             mainWindow.Show();
             this.Close();
 
