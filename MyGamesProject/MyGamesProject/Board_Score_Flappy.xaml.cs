@@ -19,7 +19,8 @@ namespace MyGamesProject
     /// </summary>
     public partial class Board_Score_Flappy : Window
     {
-        public Board_Score_Flappy()
+        public string username { get; set; }
+        public Board_Score_Flappy(string username)
         {
             InitializeComponent();
 
@@ -32,6 +33,13 @@ namespace MyGamesProject
             }
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow(username);
+            mainWindow.Show();
+            this.Close();
+
+
+        }
     }
 }

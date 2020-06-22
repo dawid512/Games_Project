@@ -62,6 +62,13 @@ namespace MyGamesProject.Flappy_Bird
                 startGame();
 
             }
+            if(e.Key == Key.Escape && gameover == true)
+            {
+                // pod koniec gry escape powrót do menu 
+                MainWindow mainWindow = new MainWindow(username);
+                mainWindow.Show();
+                this.Close();
+            }
 
         }
 

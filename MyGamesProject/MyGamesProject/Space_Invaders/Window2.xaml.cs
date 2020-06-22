@@ -40,8 +40,9 @@ namespace MyGamesProject.Space_Invaders
         int enemySpeed = 6;
 
         bool gameover = false;
+        public string username { get; set; }
 
-        public Window2()
+        public Window2(string user)
         {
             InitializeComponent();
           
@@ -50,6 +51,9 @@ namespace MyGamesProject.Space_Invaders
             dispatcherTimer.Interval = TimeSpan.FromMilliseconds(20);
 
             startgame();
+
+            this.username = user;
+            DataContext = username;
 
         }
 
@@ -87,6 +91,13 @@ namespace MyGamesProject.Space_Invaders
             {
                 goDown = true;
             }
+            if (e.Key == Key.Escape  )
+            {
+                // pod koniec gry escape powrót do menu 
+                MainWindow mainWindow = new MainWindow(username);
+                mainWindow.Show();
+                this.Close();
+            }
 
 
         }
@@ -115,7 +126,7 @@ namespace MyGamesProject.Space_Invaders
             if (e.Key == Key.R && gameover == true)
             {
                 //jeśli jest koniec gry, klawisz r restartuje 
-                Window2 window2 = new Window2();
+                Window2 window2 = new Window2(username);
                 window2.Show();
                 this.Close(); 
             }
