@@ -19,6 +19,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Powrót do menu" HorizontalAlignment="Left" Margin="325,350,0,0" VerticalAlignment="Top" Width="137" Height="34" Click="Button_Click"/>
 
     </Grid>
 </Window>

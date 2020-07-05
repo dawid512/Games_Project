@@ -48,14 +48,14 @@ namespace MyGamesProject
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Window2 window2 = new Window2();
+            Window2 window2 = new Window2(username);
             window2.Show();
             this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Board_Score_Flappy board_Score_ = new Board_Score_Flappy();
+            Board_Score_Flappy board_Score_ = new Board_Score_Flappy(username);
             board_Score_.Show();
             this.Close();
         }
