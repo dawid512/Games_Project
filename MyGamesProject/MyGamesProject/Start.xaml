@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Podaj swój nick" HorizontalAlignment="Left" Margin="213,144,0,0" VerticalAlignment="Top" Height="60" Width="345" FontSize="36" FontFamily="Corbel Light"/>
         <Button Content="Rozpocznij" HorizontalAlignment="Left" Margin="213,302,0,0" VerticalAlignment="Top" Width="345" Height="69" FontSize="24" Click="Button_Click"/>
-        <TextBox Name="Username" HorizontalAlignment="Left" Height="44" Margin="213,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="345" />
+        <TextBox Name="Username" HorizontalAlignment="Left" Height="44" Margin="213,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="345" FontSize="25" />
 
     </Grid>
 </Window>
