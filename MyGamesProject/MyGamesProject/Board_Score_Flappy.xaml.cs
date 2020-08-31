@@ -20,9 +20,12 @@ namespace MyGamesProject
     public partial class Board_Score_Flappy : Window
     {
         public string username { get; set; }
-        public Board_Score_Flappy(string username)
+        public Board_Score_Flappy(string user)
         {
             InitializeComponent();
+
+            this.username = user;
+            DataContext = username;
 
             using (var ctx = new Context())
             {

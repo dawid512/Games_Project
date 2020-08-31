@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Board_Score_Flappy" Height="450" Width="800">
     <Grid>
-        <ListView HorizontalAlignment="Left" x:Name="MyList" Height="256" Margin="273,67,0,0" VerticalAlignment="Top" Width="231" >
+        <ListView HorizontalAlignment="Left" x:Name="MyList" Height="256" Margin="273,67,0,0" VerticalAlignment="Top" Width="214" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="firstColumn"
