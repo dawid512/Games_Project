@@ -17,5 +17,5 @@ Na potrzebę zaliczenia przedmiotu stwórz aplikację w WPF.
 ![Example screenshot](./ss/ss5.PNG)
 
 ## Do poprawienia 
-Poprawić wyświetlanie wyników
-adres do zdjęc w spaceinvarder
+*Poprawić wyświetlanie wyników
+*adres do zdjęc w spaceinvarder
